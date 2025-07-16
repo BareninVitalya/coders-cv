@@ -1,0 +1,64 @@
+---
+company: "Google"
+title: "Software Engineer"
+start: "2017"
+end: "2020"
+description: |
+  In this section, I talk about my experience working at Google.
+skills:
+  - Go
+  - Python
+  - Machine Learning
+  - Distributed Systems
+  - Docker
+  - Kubernetes
+  - Terraform
+  - Ansible
+---
+import Image from 'next/image'
+import pic from '@/data/works/google/servers.jpg'
+import Link from 'next/link'
+
+I've always believed that building scalable systems is more than just writing efficient code—it's a mindset. My time at Google (2017–2020) on the **Search Infrastructure team** allowed me to put this philosophy into practice.
+
+I worked on several high-impact projects, such as:
+
+1. **Ranking Engine Overhaul**
+   - Refactoring critical ranking algorithms using `Go`
+   - Integrating machine learning models developed in TensorFlow
+   - Improving P99 latency significantly—from **1200 ms** down to **950 ms**
+
+2. **Distributed Query Caching**
+   - Built and optimized a caching layer with **Python** and **Redis**
+   - Achieved a **50% cache-hit rate** at peak traffic
+
+3. **Real-Time Analytics Pipeline**
+   Developed a streaming analytics tool for monitoring search latency:
+
+   ```js
+   logs
+     .filter(log => log.latency > 1000)
+     .forEach(alert => sendAlert(alert))
+
+### Key results of my contributions:
+
+| Metric                 | Before  | After   |
+|------------------------|--------:|--------:|
+| P99 Latency (ms)       | 1200    | 950     |
+| Cache Hit Rate (%)     | 35      | 50      |
+| Throughput (queries/s) | 150 000 | 180 000 |
+
+In addition to technical contributions, I mentored 5 interns, organized weekly tech talks, and actively contributed to open-source projects like [OpenTelemetry](https://opentelemetry.io) and [gRPC](https://grpc.io).
+
+Here's a quick example of deploying one of our internal services:
+
+```bash
+kubectl apply -f google-search-deployment.yaml
+```
+
+I also shared my experience through public speaking and writing:
+
+- **GopherCon 2018:** “Building Scalable Search Systems”
+- **Google Official Blog:** “Distributed Tracing at Scale”
+
+> Scalability is a mindset, not just a technology.

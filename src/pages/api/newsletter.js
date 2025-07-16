@@ -13,7 +13,6 @@ export default async function handler(req, res) {
 
   res.status(200).json({ success: true })
 
-  // SMTP-конфиг
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
     port: Number(process.env.SMTP_PORT),
@@ -25,7 +24,6 @@ export default async function handler(req, res) {
   })
 
   try {
-    // Отправляем себе уведомление
     await transporter.sendMail({
       from: `"Resume Bot" <${process.env.SMTP_USER}>`,
       to: process.env.MY_EMAIL,
@@ -33,13 +31,6 @@ export default async function handler(req, res) {
       text: `New request from: ${email}`,
     })
 
-    // (опционально) отправляем пользователю письмо с PDF
-    // await transporter.sendMail({
-    //   from: `"Resume Bot" <${process.env.SMTP_USER}>`,
-    //   to: email,
-    //   subject: 'Your resume PDF',
-    //   html: `<p>Hi!</p><p>Here’s the PDF version of my resume: <a href="https://yourdomain.com/resume.pdf">Download here</a></p>`,
-    // })
 
   } catch (error) {
     console.error('Email send error:', error)

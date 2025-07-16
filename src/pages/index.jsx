@@ -10,7 +10,7 @@ import {
     InstagramIcon,
     GitHubIcon,
     LinkedInIcon,
-    MastodonIcon
+    XIcon
 } from '@/components/SocialIcons'
 
 import {serverSideTranslations} from 'next-i18next/serverSideTranslations'
@@ -26,10 +26,17 @@ import image4 from '@/images/photos/coding.png'
 import {formatDate} from '@/lib/formatDate'
 import siteMeta, {resume} from '@/data/siteMeta'
 import {NextSeo} from 'next-seo';
-import AboutPageText, {frontmatter as aboutPageMeta} from '@/data/about.mdx'
-import { useState } from 'react'
-import { useRouter } from 'next/router'
+import AboutEnPageText, {frontmatter as aboutEnPageMeta} from '@/data/about.mdx'
+import AboutRuPageText, {frontmatter as aboutRuPageMeta} from '@/data/about_ru.mdx'
+import {useState} from 'react'
+import {useRouter} from 'next/router'
+import {getMdxByLocale} from '@/lib/universalMdxByLocale'
 
+
+const files = {
+    en: {Component: AboutEnPageText, meta: aboutEnPageMeta},
+    ru: {Component: AboutRuPageText, meta: aboutRuPageMeta},
+}
 
 function ArrowRightIcon(props) {
     return (
@@ -133,35 +140,36 @@ function SocialLink({icon: Icon, ...props}) {
 
 function Newsletter() {
     const [email, setEmail] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const router = useRouter()
+    const [loading, setLoading] = useState(false)
+    const [error, setError] = useState('')
+    const router = useRouter()
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    setError('')
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        setLoading(true)
+        setError('')
 
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
+        try {
+            const res = await fetch('/api/newsletter', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email}),
+            })
 
-      if (res.ok) {
-        router.push('/thank-you')
-      } else {
-        const data = await res.json()
-        setError(data.error || 'Something went wrong')
-      }
-    } catch (err) {
-      console.error(err)
-      setError('Network error')
-    } finally {
-      setLoading(false)
+            if (res.ok) {
+                router.push('/thank-you')
+            } else {
+                const data = await res.json()
+                setError(data.error || 'Something went wrong')
+            }
+        } catch (err) {
+            console.error(err)
+            setError('Network error')
+        } finally {
+            setLoading(false)
+        }
     }
-  }
+    const {t} = useTranslation('common')
     return (
         <form
             onSubmit={handleSubmit}
@@ -169,10 +177,10 @@ function Newsletter() {
         >
             <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
                 <MailIcon className="h-6 w-6 flex-none"/>
-                <span className="ml-3">Get a PDF version</span>
+                <span className="ml-3">{t('Get a PDF version')}</span>
             </h2>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Provide your email, and I will send you a PDF version of my resume.
+                {t('email')}
             </p>
             <div className="mt-6 flex">
                 <input
@@ -185,7 +193,7 @@ function Newsletter() {
                     className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
                 />
                 <Button type="submit" className="ml-4 flex-none">
-                    Join
+                    {t('Get')}
                 </Button>
             </div>
         </form>
@@ -202,7 +210,6 @@ function Resume() {
             </h2>
             <ol className="space-y-4">
                 {resume.map((role, idx) => {
-                    // делаем из имени компании «slug»
                     const slug = role.company
                         .toLowerCase()
                         .replace(/\s+/g, '-')
@@ -326,6 +333,8 @@ function Photos() {
 }
 
 export default function Home() {
+    const {locale} = useRouter()
+    const {Component, meta} = getMdxByLocale({locale, files})
     return (
         <>
             <NextSeo
@@ -336,22 +345,16 @@ export default function Home() {
             <Container className="mt-9">
                 <div className="max-w-2xl text-lg">
                     <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-                        {aboutPageMeta.title}
+                        {meta.title}
                     </h1>
                     <div className="prose dark:prose-invert text-zinc-600 dark:text-zinc-400">
-                        <AboutPageText/>
+                        <Component/>
                     </div>
                     <div className="mt-6 flex gap-6">
                         <SocialLink
                             href={siteMeta.author.twitter}
                             aria-label="Follow on Twitter"
-                            icon={TwitterIcon}
-                        />
-                        <SocialLink
-                            href={siteMeta.author.mastodon}
-                            aria-label="Follow on Mastodon"
-                            icon={MastodonIcon}
-                            rel="me"
+                            icon={XIcon}
                         />
 
                         <SocialLink

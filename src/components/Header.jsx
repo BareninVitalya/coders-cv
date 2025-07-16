@@ -8,7 +8,7 @@ import {Container} from '@/components/Container'
 import avatarImage from '@/images/avatar-head.png'
 
 import {Fragment, useEffect, useRef, useState} from 'react'
-import { useTranslation } from 'next-i18next'
+import {useTranslation} from 'next-i18next'
 
 function CloseIcon(props) {
     return (
@@ -75,8 +75,10 @@ function MoonIcon(props) {
 function EnIcon(props) {
     return (
         <svg viewBox="0 0 101.52 48.81" fill="currentColor" {...props}>
-            <path d="M18.21,48.77c-4.86,0-9.42-1.89-12.86-5.32C1.9,40.01,0,35.44,0,30.57V0H23.66c11.44,0,20.75,9.31,20.75,20.75v9.82H12.88c.32,1.27,.98,2.44,1.93,3.4,1.39,1.38,3.21,2.14,5.19,2.14l24.4-.05,.02,12.66-26.18,.06s-.02,0-.04,0ZM3.59,3.59V30.57c0,3.91,1.52,7.58,4.29,10.35,2.76,2.76,6.43,4.27,10.33,4.27h.03l22.59-.05v-5.48s-20.82,.05-20.82,.05h-.02c-2.91,0-5.65-1.13-7.71-3.19-2.07-2.06-3.2-4.81-3.2-7.73v-1.79h31.75v-6.24c0-9.46-7.7-17.16-17.16-17.16H3.59Zm5.49,17.91V9.07h15.63c5.87,0,10.64,4.77,10.64,10.64v1.79H9.07Zm3.59-3.59H31.52c-.8-3.02-3.55-5.26-6.82-5.26H12.66v5.26Z"/>
-      <path d="M101.44,48.81l-12.66-.05,.08-22.76c.01-3.42-1.31-6.64-3.73-9.06-2.41-2.42-5.63-3.76-9.05-3.76h-10.03V48.78h-12.66V.51h22.75c6.8,0,13.18,2.65,17.98,7.47,4.79,4.81,7.42,11.21,7.4,18l-.09,22.83Zm-9.06-3.62l5.48,.02,.07-19.24c.02-5.83-2.23-11.32-6.35-15.46-4.12-4.13-9.6-6.41-15.43-6.41h-19.16V45.19h5.48V9.58h13.62c4.38,0,8.5,1.71,11.59,4.81,3.09,3.1,4.79,7.23,4.77,11.61l-.07,19.18Z"/>
+            <path
+                d="M18.21,48.77c-4.86,0-9.42-1.89-12.86-5.32C1.9,40.01,0,35.44,0,30.57V0H23.66c11.44,0,20.75,9.31,20.75,20.75v9.82H12.88c.32,1.27,.98,2.44,1.93,3.4,1.39,1.38,3.21,2.14,5.19,2.14l24.4-.05,.02,12.66-26.18,.06s-.02,0-.04,0ZM3.59,3.59V30.57c0,3.91,1.52,7.58,4.29,10.35,2.76,2.76,6.43,4.27,10.33,4.27h.03l22.59-.05v-5.48s-20.82,.05-20.82,.05h-.02c-2.91,0-5.65-1.13-7.71-3.19-2.07-2.06-3.2-4.81-3.2-7.73v-1.79h31.75v-6.24c0-9.46-7.7-17.16-17.16-17.16H3.59Zm5.49,17.91V9.07h15.63c5.87,0,10.64,4.77,10.64,10.64v1.79H9.07Zm3.59-3.59H31.52c-.8-3.02-3.55-5.26-6.82-5.26H12.66v5.26Z"/>
+            <path
+                d="M101.44,48.81l-12.66-.05,.08-22.76c.01-3.42-1.31-6.64-3.73-9.06-2.41-2.42-5.63-3.76-9.05-3.76h-10.03V48.78h-12.66V.51h22.75c6.8,0,13.18,2.65,17.98,7.47,4.79,4.81,7.42,11.21,7.4,18l-.09,22.83Zm-9.06-3.62l5.48,.02,.07-19.24c.02-5.83-2.23-11.32-6.35-15.46-4.12-4.13-9.6-6.41-15.43-6.41h-19.16V45.19h5.48V9.58h13.62c4.38,0,8.5,1.71,11.59,4.81,3.09,3.1,4.79,7.23,4.77,11.61l-.07,19.18Z"/>
         </svg>
     )
 }
@@ -84,27 +86,29 @@ function EnIcon(props) {
 function RuIcon(props) {
     return (
         <svg viewBox="0 0 90.64 48.86" fill="currentColor" {...props}>
-            <path d="M0,48.86V23C0,10.65,10.05,.6,22.4,.6h13.7V13.25h-12.35c-6.11,0-11.08,4.97-11.08,11.08v24.52H0Zm9.07-3.59V24.34c0-8.09,6.58-14.67,14.67-14.67h8.77V4.18h-10.11C12.14,4.18,3.77,12.44,3.59,22.66v22.62h5.48Z"/>
-      <path d="M42.56,48.53l-.08-48.29,12.66-.02,.06,35.58,10.14-.06c3.4-.02,6.58-1.36,8.97-3.77,2.39-2.41,3.69-5.61,3.67-9.01l-.12-22.9,12.66-.07,.13,23.32c.04,6.66-2.53,12.94-7.21,17.68-4.69,4.74-10.94,7.37-17.6,7.4l-23.27,.12ZM46.07,3.82l.07,41.1,19.66-.11c5.71-.03,11.06-2.28,15.07-6.34,4.01-4.06,6.21-9.43,6.18-15.14l-.11-19.73-5.48,.03,.1,19.31c.02,4.35-1.65,8.46-4.71,11.55-3.06,3.1-7.15,4.81-11.5,4.84l-13.74,.08-.06-35.6h-5.48Z"/>
-    </svg>
+            <path
+                d="M0,48.86V23C0,10.65,10.05,.6,22.4,.6h13.7V13.25h-12.35c-6.11,0-11.08,4.97-11.08,11.08v24.52H0Zm9.07-3.59V24.34c0-8.09,6.58-14.67,14.67-14.67h8.77V4.18h-10.11C12.14,4.18,3.77,12.44,3.59,22.66v22.62h5.48Z"/>
+            <path
+                d="M42.56,48.53l-.08-48.29,12.66-.02,.06,35.58,10.14-.06c3.4-.02,6.58-1.36,8.97-3.77,2.39-2.41,3.69-5.61,3.67-9.01l-.12-22.9,12.66-.07,.13,23.32c.04,6.66-2.53,12.94-7.21,17.68-4.69,4.74-10.94,7.37-17.6,7.4l-23.27,.12ZM46.07,3.82l.07,41.1,19.66-.11c5.71-.03,11.06-2.28,15.07-6.34,4.01-4.06,6.21-9.43,6.18-15.14l-.11-19.73-5.48,.03,.1,19.31c.02,4.35-1.65,8.46-4.71,11.55-3.06,3.1-7.15,4.81-11.5,4.84l-13.74,.08-.06-35.6h-5.48Z"/>
+        </svg>
     )
 }
 
-function EnLogoItem({ icon: Icon, className }) {
-  return (
-    <Icon
-      className={clsx(
-        className,
-        'w-6 h-6',
-        'fill-zinc-400 stroke-zinc-500',
-        'dark:fill-zinc-500 dark:stroke-zinc-500',
-        'transition-colors duration-200 ease-in-out',
-        'hover:fill-teal-600 hover:stroke-teal-700',
-        'dark:hover:fill-teal-700 dark:hover:stroke-teal-300'
-      )}
-      aria-hidden="true"
-    />
-  )
+function EnLogoItem({icon: Icon, className}) {
+    return (
+        <Icon
+            className={clsx(
+                className,
+                'w-6 h-6',
+                'fill-zinc-400 stroke-zinc-500',
+                'dark:fill-zinc-500 dark:stroke-zinc-500',
+                'transition-colors duration-200 ease-in-out',
+                'hover:fill-teal-600 hover:stroke-teal-700',
+                'dark:hover:fill-teal-700 dark:hover:stroke-teal-300'
+            )}
+            aria-hidden="true"
+        />
+    )
 }
 
 function MobileNavItem({href, children}) {
@@ -118,7 +122,7 @@ function MobileNavItem({href, children}) {
 }
 
 function MobileNavigation(props) {
-    const { t } = useTranslation('common')
+    const {t} = useTranslation('common')
     return (
         <Popover {...props}>
             <Popover.Button
@@ -199,7 +203,7 @@ function NavItem({href, children}) {
 }
 
 function DesktopNavigation(props) {
-    const { t } = useTranslation('common')
+    const {t} = useTranslation('common')
     return (
         <nav {...props}>
             <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
@@ -251,9 +255,10 @@ function ModeToggle() {
 export function LocaleToggle() {
     const router = useRouter()
     const current = router.locale === 'ru' ? 'ru' : 'en'
+
     function toggleLocale() {
         const next = current === 'en' ? 'ru' : 'en'
-        router.push(router.pathname, router.asPath, { locale: next })
+        router.push(router.pathname, router.asPath, {locale: next})
     }
 
     return (

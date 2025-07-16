@@ -1,18 +1,14 @@
-import logoAmazon from '@/images/logos/aws.svg'
-import logoClarity from '@/images/logos/clarity.jpg'
+import logoMIT from '@/images/logos/MIT.png'
+import logoBerkeley from '@/images/logos/UCBerkeley.png'
 import logoMicrosoft from '@/images/logos/azure.svg'
-import logoXOR from '@/images/logos/xor.jpg'
-import logoVanilla from '@/images/logos/vanilla.svg'
-import logoFleek from '@/images/logos/fleeksvg.svg'
-import logoUblue from '@/images/logos/ublue.png'
+import logoGoogle from '@/images/logos/google.png'
 
 import logoGolang from '@/images/logos/icons8-golang.svg'
 import logoKubernetes from '@/images/logos/kubernetes.svg'
-import logoCaptainhook from '@/images/logos/captainhook.svg'
-import logoUSSI from '@/images/logos/ussi.svg'
-import AboutAmazon, { frontmatter as amazonMeta }
-  from '@/data/works/amazon/index.mdx'
-
+import AboutMicrosoft, { frontmatter as microsoftMeta }
+  from '@/data/works/microsoft/microsoft-internship.mdx'
+import AboutGoogle, { frontmatter as googleMeta }
+  from '@/data/works/google/google.mdx'
 
 const siteMeta = {
     title: "My name",
@@ -22,7 +18,6 @@ const siteMeta = {
         name: "My name",
         email: "my@exemple.com",
         twitter: "https://twitter.com",
-        mastodon: "https://tty0.social",
         instagram: "https://instagram.com",
         github: "https://github.com",
         linkedin: "https://linkedin.com",
@@ -30,104 +25,53 @@ const siteMeta = {
         youtube: "https://youtube.com",
     },
     siteUrl: "https://mysite.dev",
-    icon: '/favicon.png'
+    icon: '/favicon.ico'
 }
 export const resume = [
     {
-        company: amazonMeta.company,
-        title: amazonMeta.title,
-        logo: logoUSSI,
-        start: '2022',
-        end: {
-            label: 'Present',
-            dateTime: new Date().getFullYear(),
-        },
-        description: amazonMeta.description,
-        skills: amazonMeta.skills,
-        Component: AboutAmazon,
-    },
-    {
-        company: 'Microsoft',
-        title: 'Principal Cloud Developer Advocate',
+        company: microsoftMeta.company,
+        title: microsoftMeta.title,
         logo: logoMicrosoft,
-        start: '2017',
-        end: '2022',
-        description: amazonMeta.description,
-        skills: amazonMeta.skills,
-        Component: AboutAmazon,
+        start: microsoftMeta.start,
+        end: microsoftMeta.end,
+        description: microsoftMeta.description,
+        skills: microsoftMeta.skills,
+        Component: AboutMicrosoft,
     },
     {
-        company: 'XOR Data Exchange',
-        title: 'CIO',
-        logo: logoXOR,
-        start: '2014',
-        end: '2016',
-        description: amazonMeta.description,
-        skills: amazonMeta.skills,
-        Component: AboutAmazon,
-    },
-    {
-        company: 'Clarity Services, Inc.',
-        title: 'COO',
-        logo: logoClarity,
-        start: '2008',
-        end: '2014',
-        description: amazonMeta.description,
-        skills: amazonMeta.skills,
-        Component: AboutAmazon,
+        company: googleMeta.company,
+        title: googleMeta.title,
+        logo: logoGoogle,
+        start: googleMeta.start,
+        end: googleMeta.end,
+        description: googleMeta.description,
+        skills: googleMeta.skills,
+        Component: AboutGoogle,
     },
 ]
 export const education = [
     {
-        institution: 'University of Example',
-        degree: 'B.Sc. in Computer Science',
-        logo: logoAmazon,
-        start: '2008',
-        end: '2012',
+        institution: 'Massachusetts Institute of Technology',
+        degree: 'M.Sc. in Computer Science and Artificial Intelligence',
+        logo: logoMIT,
+        start: '2014',
+        end: '2016',
     },
     {
-        institution: 'Example Graduate School',
-        degree: 'M.A. in Interactive Media',
-        logo: logoUSSI,
-        start: '2013',
-        end: '2015',
+        institution: 'University of California, Berkeley',
+        degree: 'B.Sc. in Electrical Engineering and Computer Sciences',
+        logo: logoBerkeley,
+        start: '2010',
+        end: '2014',
     },
 ]
 export const projects = [
     {
-        name: 'Fleek',
+        name: 'Google Query Analytics',
         description:
-            'Install and manage all the tools you need to be productive.',
-        link: {href: 'https://getfleek.dev', label: 'getfleek.dev'},
-        logo: logoFleek,
-    },
-    {
-        name: 'Universal Blue',
-        description:
-            'Custom Operating System images based on Fedora.',
-        link: {href: 'https://ublue.it', label: 'Universal Blue'},
-        logo: logoUblue,
-    },
-    {
-        name: 'Bluefin',
-        description:
-            'The next generation Linux workstation. Built for cloud-native, using cloud-native.',
-        link: {href: 'https://projectbluefin.io', label: 'Bluefin'},
-        logo: logoUblue,
-    },
-    {
-        name: 'Vanilla OS',
-        description:
-            'Vanilla OS is an immutable and atomic Ubuntu Linux-based Point Release distribution, that receives updates at the right time, neither before nor after, without sacrificing security and functionality.',
-        link: {href: 'https://vanillaos.org', label: 'vanillaos.org'},
-        logo: logoVanilla,
-    },
-    {
-        name: 'Captain Hook',
-        description:
-            'Custom commands as webhooks.',
-        link: {href: 'https://github.com/bketelsen/captainhook', label: 'github.com'},
-        logo: logoCaptainhook,
+            'A real-time analytics tool for monitoring and optimizing large-scale search queries across distributed systems at Google.',
+        link: { href: 'https://opensource.google', label: 'opensource.google' },
+        logo: logoGoogle,
     },
     {
         name: 'Kubernetes',

@@ -10,6 +10,7 @@ const { i18n } = nextI18NextConfig
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   i18n,
+  trailingSlash: true,
   pageExtensions: ['js', 'jsx', 'mdx'],
   reactStrictMode: true,
   swcMinify: true,

@@ -1,9 +1,15 @@
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-
-
 # Spotlight
 
 Spotlight is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org).
+
+<p align="center">
+  <img
+    src="src/images/interface.jpg"
+    alt="Интерфейс приложения"
+    width="600"
+    style="border-radius: 12px;"
+  />
+</p>
 
 ## Getting started
 
@@ -13,10 +19,16 @@ To get started with this template, first install the npm dependencies:
 npm install
 ```
 
-Next, create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to your site's public URL:
+Then create a `.env.local` file in the root of your project and set the `NEXT_PUBLIC_SITE_URL` variable to the public URL of your site, as well as the necessary data for SMTP configuration. The structure should be as in `.env.example`:
 
 ```
-NEXT_PUBLIC_SITE_URL=https://example.com
+NEXT_PUBLIC_SITE_URL=https://example.com        # The public URL of your site (used for absolute links, sharing, etc.)
+SMTP_HOST=                                     # SMTP server address for sending emails (e.g., smtp.gmail.com)
+SMTP_PASS=                                     # SMTP account password or app-specific password
+SMTP_USER=                                     # SMTP username (usually your email address)
+SMTP_PORT=                                     # SMTP server port (e.g., 587 for TLS, 465 for SSL)
+SMTP_SECURE=                                   # Use SSL/TLS? Set to 'true' for port 465, 'false' for 587
+MY_EMAIL=
 ```
 
 Next, run the development server:

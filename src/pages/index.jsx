@@ -182,8 +182,7 @@ function Newsletter() {
                 <span className="ml-3">{t('Get a PDF version')}</span>
             </h2>
             <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {/*{t('email')}*/}
-                Provide your email, and I will send you a PDF version of my resume.
+                {t('email')}
             </p>
             <div className="mt-6 flex">
                 <input
@@ -314,7 +313,6 @@ function Photos() {
 
     return (
         <div className="mt-16 sm:mt-20">
-            {/* Контейнер с горизонтальным скроллом */}
             <div
                 className="
                   -my-4
@@ -328,7 +326,7 @@ function Photos() {
                   scrollbar-hide
                 "
                 style={{
-                  WebkitOverflowScrolling: 'touch', // плавный тач-скролл на iOS
+                  WebkitOverflowScrolling: 'touch',
                 }}
             >
                 {images.map((image, imageIndex) => (

@@ -225,6 +225,9 @@ module.exports = {
             overflowX: 'auto',
             border: '1px solid',
             borderColor: 'var(--tw-prose-pre-border)',
+            width: '100%',
+            marginTop: theme('spacing.4'),
+            wordBreak: 'break-word',
           },
           'pre code': {
             display: 'inline',

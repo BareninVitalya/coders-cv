@@ -126,7 +126,7 @@ export default function About() {
                     </h2>
                     <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-[1px_minmax(0,3fr)] lg:gap-x-8 lg:gap-y-24">
                         <div className="self-stretch w-px bg-zinc-300 dark:bg-zinc-600"/>
-                        <div className="space-y-20">
+                        <div className="space-y-20 prose w-full">
                             {resume.map((role) => {
                                 const slug = role.company
                                     .toLowerCase()
@@ -136,7 +136,15 @@ export default function About() {
                                     <div
                                         id={slug}
                                         key={role.company}
-                                        className="grid grid-cols-[auto_1fr_auto] items-start gap-x-4"
+                                        className="
+                                                    grid
+                                                    grid-cols-[min-content_1fr_auto]
+                                                    grid-rows-[auto_auto]
+                                                    lg:grid-rows-1
+                                                    gap-x-4
+                                                    gap-y-4
+                                                    items-start
+                                                  "
                                     >
                                         <div
                                             className="relative flex h-12 w-12 items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800">
@@ -166,10 +174,15 @@ export default function About() {
                                                 {role.end.label ?? role.end}
                                             </time>
                                         </div>
-                                        <div
-                                            className="col-start-2 mt-2 prose dark:prose-invert text-zinc-600 dark:text-zinc-400">
+                                        <div className="
+                                                          row-start-2
+                                                          col-start-1 col-end-4
+                                                          prose min-w-0 dark:prose-invert text-zinc-600 dark:text-zinc-400
+                                                          lg:col-start-2 lg:col-end-3
+                                                        ">
                                             <role.Component/>
                                             {role.skills && role.skills.length && (
+
                                                 <div
                                                     className="rounded-2xl border border-zinc-100 p-2 dark:border-zinc-700/40">
                                                     <div className="flex flex-wrap gap-2">
